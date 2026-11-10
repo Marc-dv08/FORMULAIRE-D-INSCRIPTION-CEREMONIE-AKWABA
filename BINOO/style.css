@@ -1,0 +1,382 @@
+
+/* =====================================
+   1. CONFIGURATION GENERALE
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+:root {
+    --primary: #2563eb;
+    --secondary: #0ea5e9;
+    --dark: #07152e;
+    --white: #ffffff;
+    --text: #e2e8f0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    background:
+        radial-gradient(circle at 10% 10%, #123c78, transparent 35%),
+        radial-gradient(circle at 90% 90%, #075985, transparent 35%),
+        #07152e;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Décoration lumineuse */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    background: rgba(37, 99, 235, 0.12);
+    filter: blur(100px);
+    border-radius: 50%;
+    top: 10%;
+    right: 5%;
+    z-index: -1;
+}
+
+/* =====================================
+   2. CONTENEUR PRINCIPAL
+===================================== */
+
+.container {
+    width: 100%;
+    max-width: 720px;
+    margin: auto;
+}
+
+.form-card {
+    width: 100%;
+    padding: 40px;
+    background: rgba(15, 35, 70, 0.88);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-top: 4px solid var(--primary);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* =====================================
+   3. EN-TETE
+===================================== */
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #2563eb, #0ea5e9);
+    color: white;
+    font-size: 30px;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+
+.badge {
+    display: inline-block;
+    margin-top: 18px;
+    color: #60a5fa;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+h1 {
+    color: white;
+    font-size: 27px;
+    font-weight: 800;
+    margin-top: 12px;
+    letter-spacing: 1px;
+}
+
+h1 span {
+    color: #38bdf8;
+}
+
+.header p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-top: 12px;
+    line-height: 1.7;
+}
+
+/* =====================================
+   4. TITRE DE SECTION
+===================================== */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #60a5fa;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.section-title i {
+    font-size: 19px;
+}
+
+/* =====================================
+   5. GRILLE DU FORMULAIRE
+===================================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+/* =====================================
+   6. LABELS
+===================================== */
+
+label {
+    color: #cbd5e1;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+
+label span {
+    color: #38bdf8;
+}
+
+/* =====================================
+   7. CHAMPS DE SAISIE
+===================================== */
+
+.input-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 14px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.input-box i {
+    color: #60a5fa;
+    font-size: 17px;
+    flex-shrink: 0;
+}
+
+.input-box input,
+.input-box select {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 13px;
+    min-width: 0;
+}
+
+.input-box input::placeholder {
+    color: #64748b;
+}
+
+.input-box select {
+    cursor: pointer;
+}
+
+.input-box select option {
+    background: #10264b;
+    color: white;
+}
+
+.input-box:focus-within {
+    border-color: #38bdf8;
+    background: rgba(37, 99, 235, 0.12);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
+
+/* =====================================
+   8. BOITE D'INFORMATION
+===================================== */
+
+.info-box {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-top: 25px;
+    padding: 15px;
+    background: rgba(37, 99, 235, 0.12);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 10px;
+}
+
+.info-box i {
+    color: #38bdf8;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.info-box p {
+    color: #bfdbfe;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* =====================================
+   9. MESSAGES
+===================================== */
+
+.message {
+    display: none;
+    margin-top: 18px;
+    padding: 13px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.message.success {
+    display: block;
+    color: #86efac;
+    background: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.message.error {
+    display: block;
+    color: #fca5a5;
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* =====================================
+   10. BOUTON
+===================================== */
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #2563eb, #0284c7);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+}
+
+button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+button i {
+    font-size: 18px;
+}
+
+/* =====================================
+   11. PIED DE PAGE
+===================================== */
+
+.footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(148, 163, 184, 0.15);
+    text-align: center;
+}
+
+.footer p {
+    color: #60a5fa;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.footer span {
+    color: #64748b;
+    font-size: 11px;
+}
+
+/* =====================================
+   12. RESPONSIVE
+===================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 12px;
+        align-items: flex-start;
+    }
+
+    .form-card {
+        padding: 28px 20px;
+        border-radius: 16px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .full-width {
+        grid-column: span 1;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .header p {
+        font-size: 13px;
+    }
+
+    .input-box {
+        height: 48px;
+    }
+}
